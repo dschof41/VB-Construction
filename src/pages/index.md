@@ -13,7 +13,7 @@ description: VB Construction provide a wide range of general contracting
   services developed over years of experience!
 intro:
   blurbs:
-    - image: /img/blueprint_icon.png
+    - image: /img/coffee.png
       text: |
         We help plan and quote your project every step of the way
     - image: /img/coffee-gear.png

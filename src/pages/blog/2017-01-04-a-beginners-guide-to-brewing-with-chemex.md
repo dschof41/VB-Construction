@@ -15,4 +15,4 @@ tags:
 
 ## Not all old things need to go!
 
-We were able to use the existing concrete step and build a beautiful (and level!) stone step around it, as well as replace and regrout much of the old stone walkway to bring it back to life!
+We were able to use the existing concrete step and build a beautiful (and level!) stone step around it, saving time and money! We also replaced and regrouted much of the old stone walkway to bring it back to life!

@@ -13,8 +13,6 @@ tags:
 ---
 ![finished step](/img/walkway_after.jpg "new step!")
 
-The fresh new front step!
+## Not all old things need to go!
 
-## Reworking old stone and concrete
-
-Not all old things need to go! We were able to use the existing concrete step and build a beautiful (and level!) stone step around it, as well as replace and regrout much of the old stone walkway to bring it back to life!
+We were able to use the existing concrete step and build a beautiful (and level!) stone step around it, as well as replace and regrout much of the old stone walkway to bring it back to life!

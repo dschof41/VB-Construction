@@ -44,6 +44,7 @@ export default class Index extends React.Component {
                 name="contact"
                 method="POST"
                 data-netlify="true"
+                action={window.location.origin}
               >
                 <div className="field">
                   <label className="label" htmlFor={'name'}>

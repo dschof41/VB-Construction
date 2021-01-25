@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'VB Conscruction Business Site',
+    title: 'VB Construction',
     description:
       'Business Site for VB Construction LLC',
   },

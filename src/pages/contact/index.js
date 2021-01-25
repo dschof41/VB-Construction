@@ -45,10 +45,10 @@ export default class Index extends React.Component {
                 method="POST"
                 data-netlify="true"
               >
-                <div hidden>
+                <div className="field" hidden>
                     <input
                       className="input"
-                      type={'text'}
+                      type={'hidden'}
                       name={'form-name'}
                       value={'contact'}
                       id={'form-name'}

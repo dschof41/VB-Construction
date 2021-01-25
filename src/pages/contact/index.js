@@ -52,7 +52,6 @@ export default class Index extends React.Component {
                       name={'form-name'}
                       value={'contact'}
                       id={'form-name'}
-                      disabled={true}
                     />
                   </div>
                 <div className="field">

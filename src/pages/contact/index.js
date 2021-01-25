@@ -44,8 +44,17 @@ export default class Index extends React.Component {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                action={'/'}
               >
+                <div hidden>
+                    <input
+                      className="input"
+                      type={'text'}
+                      name={'form-name'}
+                      value={'contact'}
+                      id={'form-name'}
+                      disabled={true}
+                    />
+                  </div>
                 <div className="field">
                   <label className="label" htmlFor={'name'}>
                     Your name

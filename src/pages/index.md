@@ -1,11 +1,11 @@
 ---
 templateKey: index-page
 title: Making your house a home!
-image: /img/construction_stock.jpg
-heading: Making your house a home
+image: /img/pexels-jeshootscom-834892.jpg
+heading: How do we help?
 subheading: Versatile general contracting services with a specialized feel
 mainpitch:
-  title: Why work with VB Construction?
+  title: Why VB Construction?
   description: >
     Vic and his team love helping homeowners see their dreams come true around
     their house. They take pride in making your vision a reality!

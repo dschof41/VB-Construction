@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import ContactForm from '../components/ContactForm'
 
 export const IndexPageTemplate = ({
   image,
@@ -99,6 +100,10 @@ export const IndexPageTemplate = ({
                   </div>
                 </div>
               </div>
+              <div className="content"><h3 className="has-text-weight-semibold is-size-3">
+                    Contact Us
+                  </h3>
+                  <ContactForm /></div>
             </div>
           </div>
         </div>

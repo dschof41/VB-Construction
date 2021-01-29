@@ -72,15 +72,15 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="content">
                   <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                    <h1 className="title has-text-weight-semibold is-size-2">{mainpitch.title}</h1>
                   </div>
                   <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+                    <p className="subtitle">{mainpitch.description}</p>
                   </div>
                 </div>
                 <div className="columns">
                   <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
+                    <h3 className="has-text-weight-semibold is-size-3">
                       {heading}
                     </h3>
                     <p>{description}</p>
@@ -88,8 +88,8 @@ export const IndexPageTemplate = ({
                 </div>
                 <Features gridItems={intro.blurbs} />
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
+                  <h3 className="has-text-weight-semibold is-size-3">
+                    Recent Projects
                   </h3>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
@@ -170,7 +170,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 450, maxHeight: 380, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

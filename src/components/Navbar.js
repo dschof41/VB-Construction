@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import logo from '../img/favicon-32x32.png'
+import {Link as ScrollLink, Element} from 'react-scroll'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -34,15 +34,22 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+          <ScrollLink 
+                to="home" 
+                spy={true} 
+                smooth={true} 
+                duration={500}
+                className="navbar-item"
+                title="logo"
+              >
               <img src={logo} alt="vb construction logo" />
-            </Link>
+            </ScrollLink>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -59,15 +66,36 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-            <Link className="navbar-item" to="/">
-                Home
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                See Our Work
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact Us
-              </Link>
+            <ScrollLink 
+                to="home" 
+                spy={true} 
+                smooth={true} 
+                duration={500}
+                className="navbar-item"
+                offset={-50}
+              >
+              Home
+            </ScrollLink>
+              <ScrollLink 
+                to="projects" 
+                spy={true} 
+                smooth={true} 
+                duration={500}
+                className="navbar-item"
+                offset={-50}
+              >
+              See Our Work
+            </ScrollLink>
+              <ScrollLink 
+                to="contact-form" 
+                spy={true} 
+                smooth={true} 
+                duration={500}
+                className="navbar-item"
+                offset={-50}
+              >
+              Contact Us
+            </ScrollLink>
             </div>
           </div>
         </div>

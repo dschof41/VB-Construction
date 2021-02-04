@@ -1,37 +1,22 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import logo from '../img/favicon-32x32.png'
-import {Link as ScrollLink, Element} from 'react-scroll'
+import {Link as ScrollLink} from 'react-scroll'
+import { Link } from 'gatsby'
+import {useLocation} from '@reach/router'
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
-  }
-
-  toggleHamburger = () => {
+const Navbar = () => {
+  const location = useLocation()
+  const [active, setActive] = useState(false);
+  const [navBarActiveClass, setNavBarActiveClass] = useState('');
+  const toggleHamburger = () => {
     // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
+    setActive(!active)
+  };
 
-  render() {
+  useEffect(() => {
+    setNavBarActiveClass(active ? 'is-active' : '')
+  }, [active]);
+
     return (
       <nav
         className="navbar is-fixed-top"
@@ -40,21 +25,14 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-          <ScrollLink 
-                to="home" 
-                spy={true} 
-                smooth={true} 
-                duration={500}
-                className="navbar-item"
-                title="logo"
-              >
+            <Link className="navbar-item" to="/">
               <img src={logo} alt="vb construction logo" />
-            </ScrollLink>
+            </Link>
             {/* Hamburger menu */}
             <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              className={`navbar-burger burger ${navBarActiveClass}`}
               data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
+              onClick={() => toggleHamburger()}
             >
               <span />
               <span />
@@ -63,45 +41,60 @@ const Navbar = class extends React.Component {
           </div>
           <div
             id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
+            className={`navbar-menu ${navBarActiveClass}`}
           >
+          { location.pathname === '/' ? (
             <div className="navbar-start has-text-centered">
-            <ScrollLink 
-                to="home" 
-                spy={true} 
-                smooth={true} 
-                duration={500}
-                className="navbar-item"
-                offset={-50}
-              >
-              Home
-            </ScrollLink>
               <ScrollLink 
-                to="projects" 
-                spy={true} 
-                smooth={true} 
-                duration={500}
-                className="navbar-item"
-                offset={-50}
-              >
-              See Our Work
-            </ScrollLink>
-              <ScrollLink 
-                to="contact-form" 
-                spy={true} 
-                smooth={true} 
-                duration={500}
-                className="navbar-item"
-                offset={-50}
-              >
-              Contact Us
-            </ScrollLink>
+                  to="home" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="navbar-item"
+                  offset={-50}
+                > 
+                Home
+              </ScrollLink>
+                <ScrollLink 
+                  to="projects" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="navbar-item"
+                  offset={-50}
+                >
+                See Our Work
+              </ScrollLink>
+                <ScrollLink 
+                  to="contact-form" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="navbar-item"
+                  offset={-50}
+                >
+                Contact Us
+              </ScrollLink>
             </div>
+            ) :
+            (
+              <div className="navbar-start has-text-centered">
+                <Link className="navbar-item" to="/">
+                  Home
+                </Link>
+                <Link className="navbar-item" to="/#projects">
+                  See Our Work
+                </Link>
+                <Link className="navbar-item" to="/#contactForm">
+                  Contact Us
+                </Link>
+              </div>
+          )
+          }
           </div>
         </div>
       </nav>
     )
-  }
 }
 
 export default Navbar

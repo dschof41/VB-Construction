@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Element } from 'react-scroll'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
@@ -93,7 +93,7 @@ export const IndexPageTemplate = ({
                     </div>
                   </div>
                   <Features gridItems={intro.blurbs} />
-                  <Element name='projects'>
+                  <Element name='projects' id='projects'>
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-3">
                       Recent Projects
@@ -107,7 +107,7 @@ export const IndexPageTemplate = ({
                   </div>
                   </Element>
                 </div>
-                <Element name='contact-form'>
+                <Element name='contact-form' id="contactForm">
                   <div className="content">
                     <h3 className="has-text-weight-semibold is-size-3">
                       Contact Us

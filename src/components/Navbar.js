@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import logo from '../img/favicon-32x32.png'
+import logo from '../img/favicon2_32x32.jpg'
 import {Link as ScrollLink} from 'react-scroll'
 import { Link } from 'gatsby'
 import {useLocation} from '@reach/router'

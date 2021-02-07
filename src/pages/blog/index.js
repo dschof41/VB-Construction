@@ -11,6 +11,7 @@ export default class BlogIndexPage extends React.Component {
           className="full-width-image-container margin-top-0"
           style={{
             backgroundImage: `url('/img/stone.jpg')`,
+            height: '400px'
           }}
         >
           <h1
@@ -20,6 +21,7 @@ export default class BlogIndexPage extends React.Component {
               backgroundColor: '#f40',
               color: 'white',
               padding: '1rem',
+              borderRadius: '.3em'
             }}
           >
             Recent Projects

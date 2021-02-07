@@ -2,7 +2,7 @@ import React from 'react'
 import { Element } from 'react-scroll'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-
+import logo from '../../static/img/logo.jpg'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
@@ -74,7 +74,6 @@ export const IndexPageTemplate = ({
           <div className="section">
             <div className="columns">
               <div className="column is-10 is-offset-1">
-
                 <div className="content">
                   <div className="content">
                     <div className="tile">
@@ -84,6 +83,15 @@ export const IndexPageTemplate = ({
                       <p className="subtitle">{mainpitch.description}</p>
                     </div>
                   </div>
+                  <div className="content has-text-centered">
+                    <figure className="image is-16by9">
+                      <img
+                        src={logo}
+                        alt="VB Construction Logo"
+                        style={{ borderRadius: '50px' }}
+                      />
+                       </figure>
+                    </div>                   
                   <div className="columns">
                     <div className="column is-12">
                       <h3 className="has-text-weight-semibold is-size-3">

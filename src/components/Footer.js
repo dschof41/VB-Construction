@@ -1,17 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../img/default.svg'
+import logo from '../../static/img/logo.jpg'
 import facebook from '../img/social/facebook.svg'
 
-const Footer = class extends React.Component {
-  render() {
+const Footer = () => {
     return (
       <footer className="footer has-background-black has-text-white-ter">
         <div className="content has-text-centered">
           <img
             src={logo}
-            alt="Kaldi"
+            alt="VB Construction Logo"
             style={{ width: '14em', height: '10em' }}
           />
         </div>
@@ -70,6 +69,5 @@ const Footer = class extends React.Component {
       </footer>
     )
   }
-}
 
 export default Footer

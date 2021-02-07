@@ -55,6 +55,16 @@ const Navbar = () => {
                 > 
                 Home
               </ScrollLink>
+              <ScrollLink 
+                  to="about" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="navbar-item"
+                  offset={-50}
+                > 
+                About
+              </ScrollLink>
                 <ScrollLink 
                   to="projects" 
                   spy={true} 
@@ -81,6 +91,9 @@ const Navbar = () => {
               <div className="navbar-start has-text-centered">
                 <Link className="navbar-item" to="/">
                   Home
+                </Link>
+                <Link className="navbar-item" to="/#about">
+                  About
                 </Link>
                 <Link className="navbar-item" to="/#projects">
                   See Our Work

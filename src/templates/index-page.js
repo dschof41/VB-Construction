@@ -85,11 +85,11 @@ export const IndexPageTemplate = ({
                     </div>
                   </div>
                   <div className="content has-text-centered">
-                    <figure className="image is-16by9">
+                    <figure className="image is-4by3">
                       <img
                         src={logo}
                         alt="VB Construction Logo"
-                        style={{ borderRadius: '50px' }}
+                        style={{ borderRadius: '3em', width: '40em', height: '30em'}}
                       />
                        </figure>
                     </div>                   

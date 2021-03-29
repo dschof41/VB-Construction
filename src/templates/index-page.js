@@ -58,7 +58,7 @@ export const IndexPageTemplate = ({
                   <Element name='projects' id='projects'>
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-3">
-                      Recent Projects
+                      Recent Work
                     </h3>
                     <BlogRoll />
                     <div className="column is-12 has-text-centered">

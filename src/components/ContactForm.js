@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 
 const ContactForm = () => {
     const [formMessage, setFormMessage] = useState('hidden');
+    const contactForm = useRef(null)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        let contactForm = document.getElementById('contact');
         let formData = new FormData(contactForm)
         fetch('/', {
           method: 'POST',
@@ -34,6 +34,7 @@ const ContactForm = () => {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
+                ref={contactForm}
                 >
                     {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                     <input type="hidden" name="form-name" value="contact" />

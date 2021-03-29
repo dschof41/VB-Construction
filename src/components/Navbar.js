@@ -65,25 +65,18 @@ const Navbar = () => {
                 > 
                 About
               </ScrollLink>
-                <ScrollLink 
-                  to="projects" 
-                  spy={true} 
-                  smooth={true} 
-                  duration={500}
-                  className="navbar-item"
-                  offset={-50}
-                >
+              <Link className="navbar-item" to="/blog">
                 See Our Work
-              </ScrollLink>
-                <ScrollLink 
-                  to="contact-form" 
-                  spy={true} 
-                  smooth={true} 
-                  duration={500}
-                  className="navbar-item"
-                  offset={-50}
-                >
-                Contact Us
+              </Link>
+              <ScrollLink 
+                to="contact-form" 
+                spy={true} 
+                smooth={true} 
+                duration={500}
+                className="navbar-item"
+                offset={-50}
+              >
+              Contact Us
               </ScrollLink>
             </div>
             ) :
@@ -95,7 +88,7 @@ const Navbar = () => {
                 <Link className="navbar-item" to="/#about">
                   About
                 </Link>
-                <Link className="navbar-item" to="/#projects">
+                <Link className="navbar-item" to="/blog">
                   See Our Work
                 </Link>
                 <Link className="navbar-item" to="/#contactForm">

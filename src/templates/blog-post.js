@@ -25,6 +25,9 @@ export const BlogPostTemplate = ({
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-10 is-offset-1">
+            <div className="content has-text-centered">
+              <h1>{title}</h1>
+            </div>
             {beforeAndAfter ? (
               <SliderBnA showControls={true} before={featuredImage.childImageSharp.fluid.src} after={afterImage.childImageSharp.fluid.src} />
             ):<PreviewCompatibleImage
@@ -67,7 +70,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <Banner image={Stone} title={post.frontmatter.title} height={200}/>
+      <Banner image={Stone} title={'Recent Work'} height={200}/>
       <BlogPostTemplate
         description={post.frontmatter.description}
         beforeAndAfter={post.frontmatter.beforeandafter}

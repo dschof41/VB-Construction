@@ -12766,6 +12766,11 @@ react-aria-menubutton@^6.0.0:
     react-display-name "^0.2.4"
     teeny-tap "^0.2.0"
 
+react-bna@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-bna/-/react-bna-1.0.2.tgz#fe6ab4cdef41801413991ff3c1cd6c07d023b237"
+  integrity sha512-FmJq06xCqO+teYkFid6MklHp9HKaP5X+DNb3BRSy/Wt+X7JgoqUjRzDK5m4fIV59zlOl76x80yD83yxLu6AxtQ==
+
 react-circular-progressbar@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-circular-progressbar/-/react-circular-progressbar-2.0.3.tgz#fa8eb59f8db168d2904bae4590641792c80f5991"

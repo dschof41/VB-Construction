@@ -4,29 +4,37 @@ import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import SliderBnA from 'react-bna'
+import Banner from '../components/Banner'
+import Stone from '../img/stone.jpg'
 
 export const BlogPostTemplate = ({
-  content,
-  contentComponent,
   description,
+  details,
+  beforeAndAfter,
+  featuredImage,
+  afterImage,
   tags,
   title,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
-
   return (
     <section className="section">
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
+      <div className="container">
+        <div className="columns is-centered">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
+            {beforeAndAfter ? (
+              <SliderBnA showControls={true} before={featuredImage.childImageSharp.fluid.src} after={afterImage.childImageSharp.fluid.src} />
+            ):<PreviewCompatibleImage
+            imageInfo={{
+              image: featuredImage,
+              alt: `featured image thumbnail for post ${title}`,
+            }}
+          />}
             <p>{description}</p>
-            <PostContent content={content} />
+            <p>{details}</p>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -59,10 +67,13 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
+      <Banner image={Stone} title={post.frontmatter.title} height={200}/>
       <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        beforeAndAfter={post.frontmatter.beforeandafter}
+        featuredImage={post.frontmatter.featuredimage}
+        afterImage={post.frontmatter.afterimage}
+        details={post.frontmatter.details}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -91,11 +102,26 @@ export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        beforeandafter
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 1900, maxHeight: 1080, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        afterimage {
+          childImageSharp {
+            fluid(maxWidth: 1900, maxHeight: 1080, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        details
         tags
       }
     }

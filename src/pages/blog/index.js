@@ -7,7 +7,7 @@ import Stone from '../../img/stone.jpg'
 const BlogIndexPage = () => {
     return (
       <Layout>
-        <Banner image={Stone} title={'Recent Projects'} height={200}/>
+        <Banner image={Stone} title={'Recent Work'} height={200}/>
         <section className="section">
           <div className="container">
             <div className="content">

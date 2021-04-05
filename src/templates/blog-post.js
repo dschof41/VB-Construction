@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import SliderBnA from 'react-bna'
 import Banner from '../components/Banner'
 import Stone from '../img/stone.jpg'
 
@@ -29,7 +28,12 @@ export const BlogPostTemplate = ({
               <h1>{title}</h1>
             </div>
             {beforeAndAfter ? (
-              <SliderBnA showControls={true} before={featuredImage.childImageSharp.fluid.src} after={afterImage.childImageSharp.fluid.src} />
+              <PreviewCompatibleImage
+              imageInfo={{
+                image: featuredImage,
+                alt: `featured image thumbnail for post ${title}`,
+              }}
+            />
             ):<PreviewCompatibleImage
             imageInfo={{
               image: featuredImage,

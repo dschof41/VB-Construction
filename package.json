@@ -27,7 +27,6 @@
     "node-sass": "^4.14.0",
     "prop-types": "^15.6.0",
     "react": "^16.8.4",
-    "react-bna": "^1.0.2",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
     "react-scroll": "^1.8.1",

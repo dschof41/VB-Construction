@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import SliderBnA from 'react-bna'
+import ReactCompareImage from 'react-compare-image'
 import Banner from '../components/Banner'
 import Stone from '../img/stone.jpg'
 
@@ -29,7 +29,7 @@ export const BlogPostTemplate = ({
               <h1>{title}</h1>
             </div>
             {beforeAndAfter ? (
-              <SliderBnA showControls={true} before={featuredImage.childImageSharp.fluid.src} after={afterImage.childImageSharp.fluid.src} />
+              <ReactCompareImage leftImage={featuredImage.childImageSharp.fluid.src} rightImage={afterImage.childImageSharp.fluid.src} leftImageLabel="Before" rightImageLabel="After" sliderLineWidth="4"/>
             ):<PreviewCompatibleImage
             imageInfo={{
               image: featuredImage,

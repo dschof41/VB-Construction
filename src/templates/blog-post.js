@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import ReactCompareImage from 'react-compare-image'
 import Banner from '../components/Banner'
 import Stone from '../img/stone.jpg'
 
@@ -28,12 +29,7 @@ export const BlogPostTemplate = ({
               <h1>{title}</h1>
             </div>
             {beforeAndAfter ? (
-              <PreviewCompatibleImage
-              imageInfo={{
-                image: featuredImage,
-                alt: `featured image thumbnail for post ${title}`,
-              }}
-            />
+              <ReactCompareImage leftImage={featuredImage.childImageSharp.fluid.src} rightImage={afterImage.childImageSharp.fluid.src}/>
             ):<PreviewCompatibleImage
             imageInfo={{
               image: featuredImage,
@@ -62,11 +58,10 @@ export const BlogPostTemplate = ({
 }
 
 BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  details: PropTypes.string,
 }
 
 const BlogPost = ({ data }) => {

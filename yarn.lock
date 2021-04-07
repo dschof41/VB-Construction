@@ -12766,11 +12766,6 @@ react-aria-menubutton@^6.0.0:
     react-display-name "^0.2.4"
     teeny-tap "^0.2.0"
 
-react-bna@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-bna/-/react-bna-1.0.2.tgz#fe6ab4cdef41801413991ff3c1cd6c07d023b237"
-  integrity sha512-FmJq06xCqO+teYkFid6MklHp9HKaP5X+DNb3BRSy/Wt+X7JgoqUjRzDK5m4fIV59zlOl76x80yD83yxLu6AxtQ==
-
 react-circular-progressbar@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-circular-progressbar/-/react-circular-progressbar-2.0.3.tgz#fa8eb59f8db168d2904bae4590641792c80f5991"
@@ -12787,6 +12782,11 @@ react-codemirror2@^6.0.0:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-6.0.1.tgz#7daba40795eb2a52637926b6fe0b73a6e9090723"
   integrity sha512-rutEKVgvFhWcy/GeVA1hFbqrO89qLqgqdhUr7YhYgIzdyICdlRQv+ztuNvOFQMXrO0fLt0VkaYOdMdYdQgsSUA==
+
+react-compare-image@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-compare-image/-/react-compare-image-3.1.0.tgz#effa6dda23fed0700d41f71b5158f75208b61aa7"
+  integrity sha512-47ISXkAx9KXA0rjgbQvaFK5AVbxVwP1XjTQEgsmMDN8bWpONVg/IoYmelRBdMs9gQICQCIw1se/cLENEBwHWlQ==
 
 react-datetime@^2.16.3:
   version "2.16.3"

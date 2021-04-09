@@ -29,7 +29,11 @@ export const BlogPostTemplate = ({
               <h1>{title}</h1>
             </div>
             {beforeAndAfter ? (
-              <ReactCompareImage leftImage={featuredImage.childImageSharp.fluid.src} rightImage={afterImage.childImageSharp.fluid.src}/>
+              <ReactCompareImage
+                leftImage={featuredImage.childImageSharp.fluid.src} leftImageLabel="Before"
+                rightImage={afterImage.childImageSharp.fluid.src} rightImageLabel="After"
+                sliderLineWidth="4"
+              />
             ):<PreviewCompatibleImage
             imageInfo={{
               image: featuredImage,

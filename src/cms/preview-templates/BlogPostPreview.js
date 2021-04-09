@@ -5,6 +5,8 @@ import { BlogPostTemplate } from '../../templates/blog-post'
 const BlogPostPreview = ({ entry, getAsset }) => {
   const tags = entry.getIn(['data', 'tags'])
   const data = entry.getIn(['data']).toJS()
+  data.featuredimage = {childImageSharp: {fluid: {src: getAsset(data.featuredimage).toString()}}}
+  data.afterimage = {childImageSharp: {fluid: {src: getAsset(data.afterimage).toString()}}}
   return (
     <BlogPostTemplate
       description={data.description}
@@ -12,8 +14,8 @@ const BlogPostPreview = ({ entry, getAsset }) => {
       title={data.title}
       details={data.details}
       beforeAndAfter={data.beforeandafter}
-      featuredImage={getAsset(data.featuredimage)}
-      afterImage={getAsset(data.afterimage)}
+      featuredImage={data.featuredimage}
+      afterImage={data.afterimage}
     />
   )
 }

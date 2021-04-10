@@ -7,8 +7,6 @@ featuredpost: true
 beforeandafter: true
 featuredimage: /img/deck_before.jpg
 afterimage: /img/deck_after.jpg
-details: >
-  Details of the project.
 tags:
   - deck
   - wood

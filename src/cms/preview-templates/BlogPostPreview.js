@@ -12,7 +12,6 @@ const BlogPostPreview = ({ entry, getAsset }) => {
       description={data.description}
       tags={data.tags}
       title={data.title}
-      details={data.details}
       beforeAndAfter={data.beforeandafter}
       featuredImage={data.featuredimage}
       afterImage={data.afterimage}

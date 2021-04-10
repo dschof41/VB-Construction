@@ -11,7 +11,6 @@ import Stone from '../img/stone.jpg'
 
 export const BlogPostTemplate = ({
   description,
-  details,
   beforeAndAfter,
   featuredImage,
   afterImage,
@@ -40,8 +39,9 @@ export const BlogPostTemplate = ({
               alt: `featured image thumbnail for post ${title}`,
             }}
           />}
+          <div className="content">
             <p>{description}</p>
-            <p>{details}</p>
+            </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -65,7 +65,9 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  details: PropTypes.string,
+  beforeAndAfter: PropTypes.bool,
+  featuredImage: PropTypes.object,
+  afterImage: PropTypes.object
 }
 
 const BlogPost = ({ data }) => {
@@ -79,7 +81,6 @@ const BlogPost = ({ data }) => {
         beforeAndAfter={post.frontmatter.beforeandafter}
         featuredImage={post.frontmatter.featuredimage}
         afterImage={post.frontmatter.afterimage}
-        details={post.frontmatter.details}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -127,7 +128,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        details
         tags
       }
     }

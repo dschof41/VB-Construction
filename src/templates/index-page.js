@@ -8,6 +8,7 @@ import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 import ContactForm from '../components/ContactForm'
 import Banner from '../components/Banner'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const IndexPageTemplate = ({
   image,
@@ -37,15 +38,16 @@ export const IndexPageTemplate = ({
                       <p className="subtitle">{mainpitch.description}</p>
                     </div>
                   </div>
-                  <div className="content has-text-centered">
                     <figure className="image">
-                      <img
-                        src={logo}
-                        alt="VB Construction Logo"
-                        style={{ borderRadius: '3em', width: '40em', height: '30em'}}
+                    <PreviewCompatibleImage
+                        imageInfo={{
+                        image: logo,
+                        alt: `VB Construction Logo`
+                        }}
+                        imageStyle={{ borderRadius: '5%', width:'50%', height:'50%' }}
                       />
-                       </figure>
-                    </div>                   
+                      
+                    </figure>
                   <div className="columns">
                     <div className="column is-12">
                       <h3 className="has-text-weight-semibold is-size-3">

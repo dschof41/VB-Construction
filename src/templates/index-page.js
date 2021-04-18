@@ -44,7 +44,7 @@ export const IndexPageTemplate = ({
                         image: logo,
                         alt: `VB Construction Logo`
                         }}
-                        imageStyle={{ borderRadius: '5%', width:'50%', height:'50%' }}
+                        imageStyle={{ borderRadius: '5%', width:'65%', height:'65%' }}
                       />
                       
                     </figure>

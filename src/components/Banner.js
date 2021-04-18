@@ -26,8 +26,6 @@ const Banner = ({image, title, subheading, height=400}) => {
           <h1
             className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen vb-text"
             style={{
-              boxShadow:
-                '#333 0.5rem 0px 0px, #333 -0.5rem 0px 0px',
               backgroundColor: '#CF5300',
               color: 'white',
               lineHeight: '1',
@@ -40,8 +38,6 @@ const Banner = ({image, title, subheading, height=400}) => {
           {subheading && (<h3
             className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen vb-text"
             style={{
-              boxShadow:
-                '#333 0.5rem 0px 0px, #333 -0.5rem 0px 0px',
               backgroundColor: '#CF5300',
               color: 'white',
               lineHeight: '1',

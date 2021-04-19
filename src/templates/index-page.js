@@ -13,10 +13,8 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 export const IndexPageTemplate = ({
   image,
   title,
-  heading,
   subheading,
   mainpitch,
-  description,
   intro,
 }) => {
   return(
@@ -51,9 +49,9 @@ export const IndexPageTemplate = ({
                   <div className="columns">
                     <div className="column is-12">
                       <h3 className="has-text-weight-semibold is-size-3">
-                        {heading}
+                        {intro.heading}
                       </h3>
-                      <p>{description}</p>
+                      <p>{intro.description}</p>
                     </div>
                   </div>
                   <Features gridItems={intro.blurbs} />
@@ -93,12 +91,12 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
+    heading: PropTypes.string,
+    description: PropTypes.string,
   }),
 }
 
@@ -110,7 +108,6 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
@@ -142,13 +139,11 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
         subheading
         mainpitch {
           title
           description
         }
-        description
         intro {
           blurbs {
             image {

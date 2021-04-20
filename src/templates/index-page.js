@@ -42,7 +42,7 @@ export const IndexPageTemplate = ({
                         image: logo,
                         alt: `VB Construction Logo`
                         }}
-                        imageStyle={{ borderRadius: '5%', width:'65%', height:'65%' }}
+                        imageId="logo"
                       />
                       
                     </figure>
@@ -58,7 +58,7 @@ export const IndexPageTemplate = ({
                   <Element name='projects' id='projects'>
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-3">
-                      Recent Work
+                      See Our Work
                     </h3>
                     <BlogRoll />
                     <div className="column is-12 has-text-centered">

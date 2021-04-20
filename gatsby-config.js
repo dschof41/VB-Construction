@@ -37,7 +37,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
-        icon: `${__dirname}/src/img/favicon2_16x16.jpg`,
+        icon: `${__dirname}/src/img/favicon1.jpg`,
       },
     },
     'gatsby-transformer-sharp',

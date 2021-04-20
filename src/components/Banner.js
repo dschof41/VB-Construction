@@ -35,7 +35,7 @@ const Banner = ({image, title, subheading, height=400}) => {
           >
             {title}
           </h1>
-          {subheading && (<h3
+          {subheading && (<h2
             className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen vb-text"
             style={{
               backgroundColor: '#CF5300',
@@ -46,7 +46,7 @@ const Banner = ({image, title, subheading, height=400}) => {
             }}
           >
             {subheading}
-          </h3>)}
+          </h2>)}
         </div>
       </div>
     )

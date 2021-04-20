@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'VB Construction',
     description:
-      'Business Site for VB Construction LLC',
+      'General Contracting Services in Northern Conecticut',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -29,8 +29,8 @@ export const BlogPostTemplate = ({
             </div>
             {beforeAndAfter ? (
               <ReactCompareImage
-                leftImage={featuredImage.childImageSharp.fluid.src} leftImageLabel="Before"
-                rightImage={afterImage.childImageSharp.fluid.src} rightImageLabel="After"
+                leftImage={featuredImage.childImageSharp.fluid.src} leftImageLabel="Before" leftImageAlt='Image of project before'
+                rightImage={afterImage.childImageSharp.fluid.src} rightImageLabel="After" leftImageAlt='Image of project after'
                 sliderLineWidth="4"
               />
             ):<PreviewCompatibleImage

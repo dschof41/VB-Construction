@@ -41,7 +41,7 @@ export const BlogPostTemplate = ({
           />}
           <div className="content">
             <p>{description}</p>
-            </div>
+          </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -75,7 +75,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <Banner image={Stone} title={'Recent Work'} height={200}/>
+      <Banner image={Stone} title={'See Our Work'} height={200}/>
       <BlogPostTemplate
         description={post.frontmatter.description}
         beforeAndAfter={post.frontmatter.beforeandafter}

@@ -2,7 +2,6 @@ import React from 'react'
 import { Element } from 'react-scroll'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import logo from '../../static/img/logo.jpg'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
@@ -14,6 +13,7 @@ export const IndexPageTemplate = ({
   image,
   title,
   subheading,
+  logo,
   mainpitch,
   intro,
 }) => {
@@ -92,6 +92,7 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   subheading: PropTypes.string,
+  logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
@@ -104,11 +105,12 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout logo={frontmatter.logo}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         subheading={frontmatter.subheading}
+        logo={frontmatter.logo}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -140,6 +142,13 @@ export const pageQuery = graphql`
           }
         }
         subheading
+        logo {
+          childImageSharp {
+            fluid(maxWidth: 760, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         mainpitch {
           title
           description

@@ -40,5 +40,6 @@ collections:
           - {label: Slogan, name: title, widget: string}
           - {label: Mission Statement, name: subheading, widget: string}
           - {label: Banner Image, name: image, widget: image}
+          - {label: Logo, name: image, widget: image}
           - {label: Sales Pitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
           - {label: Services, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}

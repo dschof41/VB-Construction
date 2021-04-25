@@ -1,17 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
-import logo from '../../static/img/logo.jpg'
 import facebook from '../img/social/facebook.svg'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-const Footer = () => {
+const Footer = ({logo}) => {
     return (
       <footer className="footer has-background-black has-text-white-ter">
         <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="VB Construction Logo"
-            style={{ width: '14em', height: '10em' }}
+        <PreviewCompatibleImage
+            imageInfo={{
+              image: logo,
+              alt: `vb construction logo`,
+            }}
+            imageId="logo"
           />
         </div>
         <div className="content has-text-centered has-background-black has-text-white-ter">

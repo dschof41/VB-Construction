@@ -3,6 +3,7 @@ templateKey: index-page
 title: Making your house a home!
 image: /img/pexels-jeshootscom-834892.jpg
 subheading: Versatile general contracting services with a specialized feel
+logo: /img/logo.jpg
 mainpitch:
   title: Why VB Construction?
   description: >

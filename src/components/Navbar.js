@@ -91,7 +91,7 @@ const Navbar = () => {
                 <Link className="navbar-item" to="/blog">
                   See Our Work
                 </Link>
-                <Link className="navbar-item" to="/#contactForm">
+                <Link className="navbar-item" to="/#contactSection">
                   Contact Us
                 </Link>
               </div>

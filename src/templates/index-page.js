@@ -19,15 +19,14 @@ export const IndexPageTemplate = ({
 }) => {
   return(
     <div>
-      <Element name='home'>
+      <Element name='home'/>
       <Banner image={image} title={title} subheading={subheading}/>
-      <Element name='about' id="about">
+      <Element name='about' id="about" />
       <section className="section section--gradient">
         <div className="container">
-          <div className="section">
+          <div className="section" id="aboutSection">
             <div className="columns">
               <div className="column is-10 is-offset-1">
-                <div className="content">
                   <div className="content">
                     <div className="tile">
                       <h1 className="title has-text-weight-semibold is-size-2">{mainpitch.title}</h1>
@@ -36,7 +35,6 @@ export const IndexPageTemplate = ({
                       <p className="subtitle">{mainpitch.description}</p>
                     </div>
                   </div>
-                    <figure className="image">
                     <PreviewCompatibleImage
                         imageInfo={{
                         image: logo,
@@ -44,47 +42,56 @@ export const IndexPageTemplate = ({
                         }}
                         imageId="logo"
                       />
-                      
-                    </figure>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h2 className="has-text-weight-semibold is-size-3">
-                        {intro.heading}
-                      </h2>
-                      <p>{intro.description}</p>
-                    </div>
                   </div>
-                  <Features gridItems={intro.blurbs} />
-                  <Element name='projects' id='projects'>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-3">
-                      See Our Work
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
                   </div>
-                  </Element>
+                  </div>
+          <div className="section" id="blurbsSection">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <div className="content">
+                  <h2 className="has-text-weight-semibold is-size-3">
+                    {intro.heading}
+                  </h2>
+                  <p>{intro.description}</p>
                 </div>
-                <Element name='contact-form' id="contactForm">
-                  <div className="content">
-                    <h3 className="has-text-weight-semibold is-size-3">
-                      Contact Us
-                    </h3>
-                  </div>
-                  <ContactForm/>
-                </Element>
+                <Features gridItems={intro.blurbs} />
               </div>
             </div>
           </div>
-        </div>
+          <div className="section" id="blogSection">
+            <Element name='projects' id='projects'>
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                <h3 className="has-text-weight-semibold is-size-3">
+                  See Our Work
+                </h3>
+              </div>
+              <BlogRoll />
+              <div className="column is-12 has-text-centered">
+                <Link className="btn" to="/blog">
+                  Read more
+                </Link>
+              </div>
+            </div>
+            </Element>
+          </div>
+            <div className="section" id="contactSection">
+              <div className="columns">
+                <div className="column is-10 is-offset-1">
+                  <Element name='contact-form' id="contactForm">
+                    <div className="content">
+                      <h3 className="has-text-weight-semibold is-size-3">
+                        Contact Us
+                      </h3>
+                    </div>
+                    <ContactForm/>
+                  </Element>
+                </div>
+              </div>
+            </div>
+          </div>   
       </section>
-      </Element>
-      </Element>
-    </div>    
+      </div>
   )
 }
 

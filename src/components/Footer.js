@@ -6,14 +6,18 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 const Footer = ({logo}) => {
     return (
       <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-        <PreviewCompatibleImage
-            imageInfo={{
-              image: logo,
-              alt: `vb construction logo`,
-            }}
-            imageId="logo"
-          />
+        <div className="container">
+          <div className="columns">
+            <div className="column is-4 is-offset-4">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: logo,
+                    alt: `vb construction logo`,
+                  }}
+                  imageId="logo"
+                />
+            </div>
+          </div>
         </div>
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">

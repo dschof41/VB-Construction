@@ -15,7 +15,7 @@ const Footer = ({logo}) => {
                     alt: `vb construction logo`,
                   }}
                   imageId="logo"
-                />
+              />
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Footer = ({logo}) => {
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <Link className="navbar-item" to="/#contactSection">
                         Contact Us
                       </Link>
                     </li>

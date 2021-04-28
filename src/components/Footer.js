@@ -7,7 +7,7 @@ const Footer = ({logo}) => {
     return (
       <footer className="footer has-background-black has-text-white-ter">
         <div className="container">
-          <div className="columns">
+          <div className="columns is-mobile">
             <div className="column is-4 is-offset-4">
                 <PreviewCompatibleImage
                   imageInfo={{

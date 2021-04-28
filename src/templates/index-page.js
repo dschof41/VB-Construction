@@ -27,24 +27,26 @@ export const IndexPageTemplate = ({
           <div className="section" id="aboutSection">
             <div className="columns">
               <div className="column is-10 is-offset-1">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title has-text-weight-semibold is-size-2">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <p className="subtitle">{mainpitch.description}</p>
-                    </div>
+                <div className="content">
+                  <div className="tile">
+                    <h1 className="title has-text-weight-semibold is-size-2">{mainpitch.title}</h1>
                   </div>
-                    <PreviewCompatibleImage
-                        imageInfo={{
-                        image: logo,
-                        alt: `VB Construction Logo`
-                        }}
-                        imageId="logo"
-                      />
+                  <div className="tile">
+                    <p className="subtitle">{mainpitch.description}</p>
                   </div>
+                </div>
+                <div className="column is-6 is-offset-3">
+                  <PreviewCompatibleImage
+                      imageInfo={{
+                      image: logo,
+                      alt: `VB Construction Logo`
+                      }}
+                      imageId="logo"
+                    />
                   </div>
-                  </div>
+              </div>
+            </div>
+          </div>
           <div className="section" id="blurbsSection">
             <div className="columns">
               <div className="column is-10 is-offset-1">

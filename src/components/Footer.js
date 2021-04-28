@@ -14,7 +14,6 @@ const Footer = ({logo}) => {
                     image: logo,
                     alt: `vb construction logo`,
                   }}
-                  imageId="logo"
               />
             </div>
           </div>

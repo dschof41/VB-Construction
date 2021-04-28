@@ -41,7 +41,6 @@ export const IndexPageTemplate = ({
                       image: logo,
                       alt: `VB Construction Logo`
                       }}
-                      imageId="logo"
                     />
                   </div>
               </div>
@@ -114,7 +113,7 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout logo={frontmatter.logo}>
+    <Layout logo={frontmatter.logo} navLogo={frontmatter.navlogo}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -151,6 +150,13 @@ export const pageQuery = graphql`
           }
         }
         subheading
+        navlogo {
+          childImageSharp {
+            fluid(maxWidth: 760, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         logo {
           childImageSharp {
             fluid(maxWidth: 760, quality: 100) {

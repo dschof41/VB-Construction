@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import logo from '../img/favicon1.jpg'
 import {Link as ScrollLink} from 'react-scroll'
 import { Link } from 'gatsby'
 import {useLocation} from '@reach/router'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-const Navbar = () => {
+const Navbar = ({navLogo}) => {
   const location = useLocation()
   const [active, setActive] = useState(false);
   const [navBarActiveClass, setNavBarActiveClass] = useState('');
@@ -25,9 +25,15 @@ const Navbar = () => {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link className="navbar-item" to="/">
-              <img src={logo} alt="vb construction logo" />
-            </Link>
+          <a href="/">
+            <img src={navLogo.childImageSharp.fluid.src} alt="vb construction logo" width="48" height="48"/>
+          </a>
+            <PreviewCompatibleImage
+                      imageInfo={{
+                      image: navLogo,
+                      alt: `VB Construction Logo`
+                      }}
+                    />
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${navBarActiveClass}`}

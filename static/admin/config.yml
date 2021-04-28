@@ -37,6 +37,7 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: Navigation Bar Image, name: navlogo, widget: image}
           - {label: Slogan, name: title, widget: string}
           - {label: Mission Statement, name: subheading, widget: string}
           - {label: Banner Image, name: image, widget: image}

@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import {Link as ScrollLink} from 'react-scroll'
 import { Link } from 'gatsby'
 import {useLocation} from '@reach/router'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const Navbar = ({navLogo}) => {
   const location = useLocation()
@@ -28,12 +27,6 @@ const Navbar = ({navLogo}) => {
           <a href="/">
             <img src={navLogo.childImageSharp.fluid.src} alt="vb construction logo" width="48" height="48"/>
           </a>
-            <PreviewCompatibleImage
-                      imageInfo={{
-                      image: navLogo,
-                      alt: `VB Construction Logo`
-                      }}
-                    />
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${navBarActiveClass}`}

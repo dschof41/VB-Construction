@@ -17,11 +17,11 @@ export const BlogPosts = ({data, count}) => {
                 }`}
               >
                 <header>
-                  {post.frontmatter.featuredimage ? (
+                  {(post.frontmatter.featuredimage || post.frontmatter.afterimage) ? (
                     <div className="featured-thumbnail">
                       <PreviewCompatibleImage
                         imageInfo={{
-                          image: post.frontmatter.featuredimage,
+                          image: post.frontmatter.afterimage || post.frontmatter.featuredimage,
                           alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         }}
                       />
@@ -85,6 +85,13 @@ const BlogRoll = () => (
                 featuredpost
                 description
                 featuredimage {
+                  childImageSharp {
+                    fluid(maxWidth: 120, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                afterimage {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {
                       ...GatsbyImageSharpFluid

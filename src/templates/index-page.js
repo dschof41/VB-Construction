@@ -8,6 +8,7 @@ import BlogRoll from '../components/BlogRoll'
 import ContactForm from '../components/ContactForm'
 import Banner from '../components/Banner'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import useSiteMetadata from '../components/SiteMetadata'
 
 export const IndexPageTemplate = ({
   image,
@@ -111,14 +112,15 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  const { logo } = useSiteMetadata()
 
   return (
-    <Layout logo={data.logo} navLogo={data.navlogo}>
+    <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         subheading={frontmatter.subheading}
-        logo={data.logo}
+        logo={logo}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -139,7 +141,6 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    ...GetLogos
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title

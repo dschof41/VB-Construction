@@ -25,7 +25,7 @@ const Navbar = ({navLogo}) => {
         <div className="container">
           <div className="navbar-brand">
           <a href="/">
-            <img src={navLogo.childImageSharp.fluid.src} alt="vb construction logo" width="48" height="48"/>
+            <img src={navLogo.fluid.src} alt="vb construction logo" width="48" height="48"/>
           </a>
             {/* Hamburger menu */}
             <div

@@ -4,9 +4,9 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import { withPrefix, graphql } from 'gatsby'
 
-const TemplateWrapper = ({ logo, navLogo, children }) => {
+const TemplateWrapper = ({logo, navLogo, children }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
@@ -54,5 +54,19 @@ const TemplateWrapper = ({ logo, navLogo, children }) => {
     </div>
   )
 }
+
+export const GetLogos = graphql`
+  fragment GetLogos on Query {
+      logo: imageSharp(fluid: {originalName: {eq: "logo.jpg"}}) {
+        fluid(maxWidth: 760, quality: 100) {
+          ...GatsbyImageSharpFluid
+          }
+      }
+      navlogo: imageSharp(fluid: {originalName: {eq: "navLogo.jpg"}}) {
+        fluid(maxWidth: 64, quality: 100) {
+          ...GatsbyImageSharpFluid
+          }
+      }
+  }`
 
 export default TemplateWrapper

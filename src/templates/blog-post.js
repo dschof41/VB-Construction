@@ -74,7 +74,7 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
+    <Layout logo={data.logo} navLogo={data.navlogo}>
       <Banner image={Stone} title={'See Our Work'} height={200}/>
       <BlogPostTemplate
         description={post.frontmatter.description}
@@ -107,6 +107,7 @@ export default BlogPost
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
+    ...GetLogos
     markdownRemark(id: { eq: $id }) {
       id
       frontmatter {

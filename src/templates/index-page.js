@@ -113,12 +113,12 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout logo={frontmatter.logo} navLogo={frontmatter.navlogo}>
+    <Layout logo={data.logo} navLogo={data.navlogo}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         subheading={frontmatter.subheading}
-        logo={frontmatter.logo}
+        logo={data.logo}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -139,6 +139,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
+    ...GetLogos
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
@@ -150,20 +151,6 @@ export const pageQuery = graphql`
           }
         }
         subheading
-        navlogo {
-          childImageSharp {
-            fluid(maxWidth: 760, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        logo {
-          childImageSharp {
-            fluid(maxWidth: 760, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         mainpitch {
           title
           description

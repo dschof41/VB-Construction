@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql, Link, withPrefix } from 'gatsby'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import ReactCompareImage from 'react-compare-image'
@@ -82,11 +82,16 @@ const BlogPost = ({ data }) => {
         featuredImage={post.frontmatter.featuredimage}
         afterImage={post.frontmatter.afterimage}
         helmet={
+          
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.description}`}
+            />
+            <meta
+              property="og:image"
+              content={`${withPrefix('/')}img/${post.frontmatter.featuredimage}}.jpg`}
             />
           </Helmet>
         }

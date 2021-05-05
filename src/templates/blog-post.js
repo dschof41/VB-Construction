@@ -2,12 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
-import { graphql, Link, withPrefix } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import ReactCompareImage from 'react-compare-image'
 import Banner from '../components/Banner'
 import Stone from '../img/stone.jpg'
+import {useLocation} from '@reach/router'
+import facebook from '../img/social/facebook.svg'
 
 export const BlogPostTemplate = ({
   description,
@@ -18,6 +20,8 @@ export const BlogPostTemplate = ({
   title,
   helmet,
 }) => {
+  const location = useLocation()
+
   return (
     <section className="section">
       {helmet || ''}
@@ -42,6 +46,11 @@ export const BlogPostTemplate = ({
           <div className="content">
             <p>{description}</p>
           </div>
+          <a href={`https://www.facebook.com/sharer/sharer.php?u=${new URLSearchParams(location.href).toString()}`} target="_blank" rel="noreferrer">
+            <button class="button is-link">
+              Share on Facebook
+            </button>
+          </a>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -82,16 +91,16 @@ const BlogPost = ({ data }) => {
         featuredImage={post.frontmatter.featuredimage}
         afterImage={post.frontmatter.afterimage}
         helmet={
-          
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.description}`}
             />
+            <meta property="og:title" content={post.frontmatter.title} />
             <meta
               property="og:image"
-              content={`${withPrefix('/')}img/${post.frontmatter.featuredimage}}.jpg`}
+              content={post.frontmatter.featuredimage.childImageSharp.fluid.src}
             />
           </Helmet>
         }

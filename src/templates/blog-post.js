@@ -100,7 +100,7 @@ const BlogPost = ({ data }) => {
             <meta property="og:title" content={post.frontmatter.title} />
             <meta
               property="og:image"
-              content={post.frontmatter.featuredimage.childImageSharp.fluid.src}
+              content={post.frontmatter.beforeandafter ? post.frontmatter.afterimage.childImageSharp.fluid.src: post.frontmatter.featuredimage.childImageSharp.fluid.src}
             />
           </Helmet>
         }

@@ -8,8 +8,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import ReactCompareImage from 'react-compare-image'
 import Banner from '../components/Banner'
 import Stone from '../img/stone.jpg'
-import {useLocation} from '@reach/router'
-import facebook from '../img/social/facebook.svg'
+import { useLocation } from '@reach/router'
 
 export const BlogPostTemplate = ({
   description,
@@ -19,9 +18,8 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  location
 }) => {
-  const location = useLocation()
-
   return (
     <section className="section">
       {helmet || ''}
@@ -81,6 +79,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
+  const location = useLocation()
 
   return (
     <Layout>
@@ -90,6 +89,7 @@ const BlogPost = ({ data }) => {
         beforeAndAfter={post.frontmatter.beforeandafter}
         featuredImage={post.frontmatter.featuredimage}
         afterImage={post.frontmatter.afterimage}
+        location={location}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>

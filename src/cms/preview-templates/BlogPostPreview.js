@@ -15,6 +15,7 @@ const BlogPostPreview = ({ entry, getAsset }) => {
       beforeAndAfter={data.beforeandafter}
       featuredImage={data.featuredimage}
       afterImage={data.afterimage}
+      location={{}}
     />
   )
 }

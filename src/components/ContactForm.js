@@ -6,14 +6,14 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        let formData = new FormData(contactForm)
+        let formData = new FormData(contactForm.current)
         fetch('/', {
           method: 'POST',
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(formData).toString()
         }).then(() => {
             setFormMessage('success')
-            contactForm.reset()
+            contactForm.current.reset()
             console.log('Form successfully submitted')
         }).catch((error) => {
             setFormMessage('error')

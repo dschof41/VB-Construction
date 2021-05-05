@@ -5,8 +5,11 @@ import { BlogPostTemplate } from '../../templates/blog-post'
 const BlogPostPreview = ({ entry, getAsset }) => {
   const tags = entry.getIn(['data', 'tags'])
   const data = entry.getIn(['data']).toJS()
-  data.featuredimage = {childImageSharp: {fluid: {src: getAsset(data.featuredimage).toString()}}}
-  data.afterimage = {childImageSharp: {fluid: {src: getAsset(data.afterimage).toString()}}}
+
+  if (data.beforeandafter) {
+    data.featuredimage = {childImageSharp: {fluid: {src: getAsset(data.featuredimage).toString()}}}
+    data.afterimage = {childImageSharp: {fluid: {src: getAsset(data.afterimage).toString()}}}
+  }
   return (
     <BlogPostTemplate
       description={data.description}
